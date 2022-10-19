@@ -6,10 +6,10 @@ from flask import render_template
 
 @app.route('/') 
 def homePage():
-    return render_template('index.html')
+    return render_template('home.html')
 
 
 
-@app.route('/test') 
-def test():
-    return render_template('test.html')
+@app.route('/favorite5') 
+def favorite5():
+    return render_template('favorite5.html')
