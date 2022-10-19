@@ -12,4 +12,11 @@ def homePage():
 
 @app.route('/favorite5') 
 def favorite5():
-    return render_template('favorite5.html')
+    people = [
+        {'name' : "Penny Hardaway"},
+        {'name' : "Grant Hill"},
+        {'name' : "Vince Carter"},
+        {'name' : "Allen Iverson"},
+        {'name' : "Steve Nash"}]
+
+    return render_template('favorite5.html', names=people)
