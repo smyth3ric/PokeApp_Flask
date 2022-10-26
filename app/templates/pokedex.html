@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="container">
+  <div class="col-sm6 mx-auto " style="width:400px; margin-top: 3rem;">
+    <div class="row">
+      <form method="POST">
+
+        {{ form.hidden_tag() }}
+
+        {{ form.name(class='form-control', placeholder= 'Choose Your Pokemon') }}
+       {{ form.submit(class='form-control btn btn-danger', placeholder= 'Choose Your Pokemon') }}
+
+
+      </form>
+    </div>
+    <div class="row-sm6 mx-auto ">
+      {% if poke %}
+      <div class="card" style="width: 400px;height: 700px; margin-top:1rem; margin-bottom: 1rem;">
+        <img src="{{ poke.img_url }}" class="card-img-top" alt="...">
+        <div class="card-body" style="background:rgb(141, 232, 255)">
+          <p class="card-text"><strong>NAME: {{ poke.name }}</strong> </p>
+          <p class="card-text"><strong>BASE EXP: {{ poke.base_exp }}</strong> </p>
+          <p class="card-text"><strong>HP: {{ poke.base_hp }}</strong> </p>
+          <p class="card-text"><strong>ABILITY: {{ poke.ability }}</strong> </p>
+          <p class="card-text"><strong>ATT: {{ poke.base_att }}</strong> </p>
+          <p class="card-text"><strong>DEF: {{ poke.base_def }}</strong> </p>
+          {% else %}
+          <h3><strong style="color: red; font-size">Sorry, that pokemon <br>does not exist. <br>Please enter a different
+            name.</strong></h3>
+        </div>
+        
+
+
+        
+
+
+      </div>
+    </div>
+
+
+  </div>
+
+
+  {% endif %}
+</div>
+</div>
+</div>
+
+
+
+{% endblock %}
